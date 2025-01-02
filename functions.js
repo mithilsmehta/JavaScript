@@ -1,4 +1,4 @@
-/*function sum(x,y)
+/*ffunction sum(x,y)
 {
    
     var total = x+y;
