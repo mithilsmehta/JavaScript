@@ -1,7 +1,7 @@
-let regrex = /welc?ome?/;
-let str1 = "Welbome to the youtube channel.  back";
-let output = regrex.test(str1);
+let regex = /^Welcome?/;
+let str1 = "Welcome to the youtube channel. Welcome";
+let output = regex.test(str1);
 console.log(output);
 
-let op = regrex.exec(str1);
+let op = regex.exec(str1);
 console.log(op);

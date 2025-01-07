@@ -27,7 +27,7 @@ function processOrder(order){
 })*/
 
 async function func1() {  
-    var order = await makeOrder("Black coffee ")
+    var order = await makeOrder("Black Coffee")
     console.log("Order has been received")
     var processedOrder = await processOrder(order)
     console.log(processedOrder)
