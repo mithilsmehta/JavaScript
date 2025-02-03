@@ -8,11 +8,11 @@ function parameters(startNum, endNum) {
        num++; 
    }
 }
-parameters(14, 27); 
-parameters(1000, 1005); 
-parameters(3200, 3203); 
-parameters(4700, 4704); 
-parameters(6150, 6156); 
+parameters(14,27); 
+// parameters(1000, 1005); 
+// parameters(3200, 3203); 
+// parameters(4700, 4704); 
+// parameters(6150, 6156); 
 
 // }
 // printRange(8);
