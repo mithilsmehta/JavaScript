@@ -4,20 +4,18 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import About from './components/About';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Routes,
-  Link,
 } from "react-router-dom";
 
 
 function App() {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not
   const [alert, setAlert] = useState(null);
-
+    
   const showAlert = (message, type) => {
     setAlert({
       msg: message,
@@ -47,23 +45,28 @@ function App() {
       showAlert("Light Mode has been Enabled", "success");
       // document.title = 'My App - Light Mode'; this is for changing the title of app 
     }
-  }
+  } 
   return (
     <>
       {/* <Navbar title = "MyApp" aboutText = "About"/> */}
       {/* <Navbar/> */}
-
-      <Navbar title="MyApp" mode={mode} aboutText="About" toggleMode={toggleMode} />
-      <Alert alert={alert} />
-
-      <div className='container'>
-
-        <About />
-        <TextForm showAlert={showAlert} heading="Enter the Text to analyze below" mode={mode} />
-
-      </div>
-
-
+      <Router>
+        <Navbar title="MyApp" mode={mode} aboutText = "About" toggleMode={toggleMode}/>
+        <Alert alert={alert} />
+        <div className='container my-3'>
+          <Switch>
+            {/* /users --> Component 1
+            /users/home --> --> Component 2 */}
+            <Route exact path="/about">
+            <About/>  
+            </Route>
+            <Route exact path="/">
+              <TextForm showAlert={showAlert} heading="Enter the Text to analyze below" mode={mode} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+      
     </>
   );
 }
